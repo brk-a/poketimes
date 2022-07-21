@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Navbar from './components/Navbar';
-import { BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Contact from './components/Contact';
 import About from './components/About';
@@ -12,17 +12,17 @@ class App extends Component{
 
   render() {
     return(
-      <BrowserRouter>
+      <Router>
         <div className='App'>
           {/* <h1 className='center blue-text'></h1> */}
           <Navbar/>
           <Routes>
-            <Route exact path="/" component={Home}/>
-            <Route path="/contact" component={Contact}/>
-            <Route path="/about" component={About}/>
+            <Route exact path="/" element={<Home/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/about" element={<About/>}/>
           </Routes>
         </div>
-      </BrowserRouter>
+      </Router>
     );
   }
 }

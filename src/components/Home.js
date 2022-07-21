@@ -1,10 +1,13 @@
 import React from 'react';
 
 const Home = () => {
-    <div className='container'>
-        <h4 className='center'>Home</h4>
-        <p> We tell porkies here at Pokies</p>
-    </div>
+    
+    return(
+        <div className='container'>
+            <h4 className='center'>Home</h4>
+            <p> We tell porkies here at Porkie Times</p>
+        </div>
+    );
 }
 
 export default Home
