@@ -5,7 +5,7 @@ const Home = () => {
     return(
         <div className='container'>
             <h4 className='center'>Home</h4>
-            <p> We tell porkies here at Porkie Times</p>
+            <p> We always tell porkies here at Porkie Times</p>
         </div>
     );
 }

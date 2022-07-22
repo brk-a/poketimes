@@ -11,7 +11,7 @@ const Contact = () => {
     return (
         <div className='container'>
             <h4 className='center'>Contact</h4>
-            <p> Find us at 5.5 ReLiars Plaza, Pork Pie Av, La La London</p>
+            <p> Find us at 0.5 ReLiars Plaza, Pork Pie Av, La La London</p>
         </div>
     );
 }
