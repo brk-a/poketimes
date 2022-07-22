@@ -1,10 +1,12 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 
-const Contact = (props) => {
-    console.log(props);
-    // setTimeout(() => {
-    //     props.history.push('/about')
-    // }, 2000);
+const Contact = () => {
+    // console.log(props);
+    const navigate = useNavigate();
+    setTimeout(() => {
+        navigate('/about');
+    }, 2000);
 
     return (
         <div className='container'>
