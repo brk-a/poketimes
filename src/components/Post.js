@@ -9,7 +9,7 @@ class Post extends Component{
 
     componentDidMount(){
         //console.log(this.props.id);
-        let id = this.props.id;
+        let {id} = this.props.id;
         this.setState({
             id: id
         });
