@@ -1,35 +1,36 @@
 import React, { Component } from "react";
-import PostHoc from "../hoc/PostHoc";
-import axios from "axios";
+// import PostHoc from "../hoc/PostHoc";
+// import axios from "axios";
+import {connect} from 'react-redux';
 
 
 class Post extends Component{
-    state = {
-        post:null
-    }
+    // state = {
+    //     post:null
+    // }
 
-    componentDidMount(){
-        //console.log(this.props.id);
-        let id = this.props.id;
-        axios.get('https://jsonplaceholder.typicode.com/posts/'  + id)
-            .then(res => {
-                this.setState({
-                    post: res.data
-                });
-                console.log(res);
-            });
-        // this.setState({
-        //     id: id
-        // });
+    // componentDidMount(){
+    //     //console.log(this.props.id);
+    //     let {id} = this.props;
+    //     axios.get('https://jsonplaceholder.typicode.com/posts/'  + id)
+    //         .then(res => {
+    //             this.setState({
+    //                 post: res.data
+    //             });
+    //             console.log(res);
+    //         });
+    //     // this.setState({
+    //     //     id: id
+    //     // });
 
-        //console.log(this.props.id);
-    }
+    //     //console.log(this.props.id);
+    // }
 
     render(){
-        const post = this.state.post ? (
+        const {post} = this.props ? (
             <div className="post">
-                <h4 className="center">{this.state.post.title}</h4>
-                <p>{this.state.post.body}</p>
+                <h4 className="center">{this.props.title}</h4>
+                <p>{this.props.body}</p>
             </div>
             ) : (
                 <div className="center">Loading post ...</div>
@@ -42,4 +43,11 @@ class Post extends Component{
     
 }
 
-export default PostHoc(Post)
+const mapStateToProps = (state, ownProps) => {
+    let id = ownProps.match.params.post_id;
+    return {
+        post: state.posts.find(post => post.id === id)
+    }
+}
+
+export default connect(mapStateToProps)(Post)
