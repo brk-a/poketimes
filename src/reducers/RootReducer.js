@@ -6,7 +6,7 @@ const initState = {
     ]
 }
 
-const RootReducer = (state=initState) => {
+const RootReducer = (state=initState, action) => {
     // if (action.type === '') {
     //     return {
     //         ...state,

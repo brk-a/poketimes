@@ -21,7 +21,7 @@ class App extends Component{
             <Route exact path="/" element={<Home/>}/>
             <Route path="/contact" element={<Contact/>}/>
             <Route path="/about" element={<About/>}/>
-            <Route path="/:post_id" element={<Post/>}/>
+            <Route path={"/:post_id"} element={<Post/>}/>
           </Routes>
         </div>
       </Router>
