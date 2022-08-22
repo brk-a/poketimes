@@ -45,10 +45,11 @@ class Post extends Component{
 
 const mapStateToProps = (state, ownProps) => {
     // let id = ownProps.match.params.post_id;
-    let id = ownProps.match.params.post_id;
+    let id = ownProps.props;
     return {
         post: state.posts.find(post => post.id === id)
     }
+    // return {posts: console.log(ownProps.props)}
 }
 
 export default connect(mapStateToProps)(Post)
